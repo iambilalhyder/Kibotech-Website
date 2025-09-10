@@ -1,0 +1,164 @@
+<!-- 🔹 Navbar Addition -->
+<li><a href="#" id="signinBtn">Sign In</a></li>
+
+<!-- 🔹 Sign In Modal -->
+<div id="signinModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Sign In</h2>
+    <form>
+      <input type="text" placeholder="Username / Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Sign In</button>
+    </form>
+    <p class="switch">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+  </div>
+</div>
+
+<!-- 🔹 Sign Up Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Create Account</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      
+      <select required>
+        <option value="" disabled selected>How do you want to associate with us?</option>
+        <option value="intern">Internship</option>
+        <option value="freelancer">Freelancer</option>
+        <option value="student">Student Program</option>
+        <option value="partner">Industry Partner</option>
+      </select>
+      
+      <input type="text" placeholder="Mobile Number" required>
+      <input type="text" placeholder="College Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      
+      <button type="submit">Sign Up</button>
+    </form>
+    <p class="switch">Already have an account? <a href="#" id="showSignin">Sign In</a></p>
+  </div>
+</div>
+
+<!-- 🔹 CSS -->
+<style>
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 95%;
+  position: relative;
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Inputs & Dropdown */
+.modal-content input, 
+.modal-content select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.modal-content button {
+  background: #00d1b2;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background: #009f86;
+}
+
+/* Switch Links */
+.switch {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.switch a {
+  color: #00d1b2;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+<!-- 🔹 JavaScript -->
+<script>
+const signinBtn = document.getElementById("signinBtn");
+const signinModal = document.getElementById("signinModal");
+const signupModal = document.getElementById("signupModal");
+const closeBtns = document.querySelectorAll(".close");
+const showSignup = document.getElementById("showSignup");
+const showSignin = document.getElementById("showSignin");
+
+// Open Sign In
+signinBtn.onclick = () => signinModal.style.display = "flex";
+
+// Switch to Sign Up
+showSignup.onclick = () => {
+  signinModal.style.display = "none";
+  signupModal.style.display = "flex";
+};
+
+// Switch to Sign In
+showSignin.onclick = () => {
+  signupModal.style.display = "none";
+  signinModal.style.display = "flex";
+};
+
+// Close Modals
+closeBtns.forEach(btn => {
+  btn.onclick = () => {
+    signinModal.style.display = "none";
+    signupModal.style.display = "none";
+  };
+});
+
+// Close if click outside
+window.onclick = (e) => {
+  if (e.target === signinModal) signinModal.style.display = "none";
+  if (e.target === signupModal) signupModal.style.display = "none";
+};
+</script>

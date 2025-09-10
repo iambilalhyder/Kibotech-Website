@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibotech - Programs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="./images/Kibotech.logo.jpeg" alt="Kibotech Logo" style="height:50px;">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="programs.html" class="dropbtn">Programs</a>
+                    <div class="dropdown-content">
+                        <a href="programs.html">Programs</a>
+                        <a href="internships.html">Internships</a>
+                        <a href="training.html">Training</a>
+                    </div>
+                </li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="signinBtn">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="programs" class="section">
+            <h2>Our Programs</h2>
+            <div class="grid">
+                <!-- Card 1 -->
+                <a href="inauguration.html" class="program-card">
+                    <img src="images/inaugurationmain.jpg" alt="Kibotech Inauguration Event">
+                    <div class="card-content">
+                        <h3>Kibotech Inauguration</h3>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="rbvrr.html" class="program-card">
+                    <img src="images/rbvrr1.png" alt="RBVRR Session">
+                    <div class="card-content">
+                        <h3>RBVRR Session</h3>
+                    </div>
+                </a>
+                
+                <!-- Card 3 -->
+                <a href="nmims.html" class="program-card">
+                    <img src="images/nmims.jpg" alt="NMIMS Mumbai Event">
+                    <div class="card-content">
+                        <h3>NMIMS, Mumbai</h3>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="recruitment.html" class="program-card">
+                    <img src="images/driveposter.png" alt="Recruitment Drive">
+                    <div class="card-content">
+                        <h3>Recruitment Drive</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Kibotech — All rights reserved</p>
+    </footer>
+
+    <!-- This is a separate modal and should be a part of a combined index.html -->
+    <!-- You can remove this section if you want to keep it on index.html only -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="signinForm">
+                <h2>Sign In</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="switch">Don’t have an account? <a onclick="showSignUp()">Sign Up</a></p>
+            </form>
+            <form id="signupForm" style="display:none;">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Full Name" required>
+                <select required>
+                    <option value="">How do you want to associate?</option>
+                    <option>Student</option>
+                    <option>Freelancer</option>
+                    <option>Partner</option>
+                </select>
+                <input type="text" placeholder="Mobile Number" required>
+                <input type="text" placeholder="College Name" required>
+                <input type="email" placeholder="Email ID" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+                <p class="switch">Already have an account? <a onclick="showSignIn()">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
